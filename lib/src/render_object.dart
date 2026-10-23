@@ -513,9 +513,10 @@ class RenderSuperSliverList extends RenderSliverMultiBoxAdaptor
 
     // Viewport is not at the beginning.
     final viewportIsScrolled = (constraints.viewportMainAxisExtent -
-                constraints.remainingPaintExtent) <
+                    constraints.remainingPaintExtent) +
+                precisionErrorTolerance <
             constraints.precedingScrollExtent ||
-        constraints.scrollOffset > 0;
+        constraints.scrollOffset > precisionErrorTolerance;
 
     // This sliver ends in visible area of viewport and viewport is scrolled.
     // When this is true the SuperSliverList will try to keep the bottom of the

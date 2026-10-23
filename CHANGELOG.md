@@ -1,3 +1,7 @@
+## 0.4.1-lh1
+
+* Fix `SuperSliverList` treating an unscrolled viewport as scrolled because of floating point rounding when preceding slivers have fractional extents. This made short lists anchor at the end on first layout and return a negative scroll offset correction, so the content visibly slid up.
+
 ## 0.4.1
 
 * Fix missing propagation of `rect` inside `RenderViewportExt.getOffsetToRevealExt`.
